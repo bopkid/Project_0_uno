@@ -655,7 +655,12 @@ const game = {
             this.currentNumber = card.card_number;
         }
     },
-
+    // select a random card from the deck
+    randomCard(){
+        const random =  Math.floor(Math.random()*Math.floor(this.deck.length))
+       console.log(this.deck.length)
+        return random;
+    },
     // will  change which way the game flow will go with reverse hand
     changeFlow(){
 
@@ -665,10 +670,30 @@ const game = {
     callingUno(){
 
     },
-    // will deal a card to the player hands
-    dealCards(){
-
+    // this will at the start of the game give the player the cards to the hand
+    dealStarterHand(){
+        for(let i = 0; i < 7;i++){
+            this.dealToPlayer();
+        }
+        for(let i = 0; i < computersList.computerPlayers.length;i++){
+            for(let t = 0; t< 7;t++){   
+                const deal = this.randomCard();
+                computersList.getComputerPlayer(i).playerHand.push(this.deck[deal])
+                this.deck.splice(deal,1)
+            }
+        }
+        console.log(this.deck.length)
     },
+    dealToPlayer(){
+        const deal = this.randomCard();
+        player.playerHand.push(this.deck[deal])
+        this.cardInPlay.push(this.cardInPlay);
+        this.deck.splice(deal,1)
+
+
+    
+    },
+   
     // check who has no card left declar that person is the victor
     // and show who has won
     checkForVictor(){
@@ -736,9 +761,17 @@ const computersList = {
     computerPlayers:[],
 // make the needed computer player
     generateComputerPlayers(){
-        const newComputer = new computer(this.computersList.length);
+        const newComputer = new computer(this.computerPlayers.length);
         this.computerPlayers.push(newComputer)
         return newComputer;
-        }
+        },
+    getComputerPlayer(index){
+        return this.computerPlayers[index];
+    }
 
 }
+computersList.generateComputerPlayers();
+game.dealStarterHand();
+
+console.log(player.playerHand)
+console.log(computersList.computerPlayers[0].playerHand)
