@@ -21,7 +21,607 @@
 
 const game = {
     // contains the whole deck 108 cards
-    deck:[],
+    deck:[
+    {
+        card_number: '0',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '0',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '0',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '0',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },
+
+    {
+        card_number: '1',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '1',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '2',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '2',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '3',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '3',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '4',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '4',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '5',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '5',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },
+        {
+        card_number: '6',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '6',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '7',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '7',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '8',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '8',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '9',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '9',
+        card_color: 'red',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '+2',
+        card_color: 'red',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: '+2',
+        card_color: 'red',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'reverse',
+        card_color: 'red',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'reverse',
+        card_color: 'red',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'skip',
+        card_color: 'red',
+        card_action: 'action',
+        png:''
+    },   {
+        card_number: 'skip',
+        card_color: 'red',
+        card_action: 'action',
+        png:''
+    },   
+
+    {
+        card_number: '1',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '1',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '2',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '2',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '3',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '3',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '4',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '4',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '5',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '5',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },
+        {
+        card_number: '6',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '6',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '7',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '7',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '8',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '8',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '9',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '9',
+        card_color: 'blue',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '+2',
+        card_color: 'blue',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: '+2',
+        card_color: 'blue',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'reverse',
+        card_color: 'blue',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'reverse',
+        card_color: 'blue',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'skip',
+        card_color: 'blue',
+        card_action: 'action',
+        png:''
+    },   {
+        card_number: 'skip',
+        card_color: 'blue',
+        card_action: 'action',
+        png:''
+    },   
+    {
+        card_number: '1',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '1',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '2',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '2',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '3',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '3',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '4',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '4',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '5',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '5',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },
+        {
+        card_number: '6',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '6',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '7',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '7',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '8',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '8',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '9',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '9',
+        card_color: 'green',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '+2',
+        card_color: 'green',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: '+2',
+        card_color: 'green',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'reverse',
+        card_color: 'green',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'reverse',
+        card_color: 'green',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'skip',
+        card_color: 'green',
+        card_action: 'action',
+        png:''
+    },   {
+        card_number: 'skip',
+        card_color: 'green',
+        card_action: 'action',
+        png:''
+    },   
+
+    {
+        card_number: '1',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '1',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '2',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '2',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '3',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '3',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '4',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '4',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '5',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },
+    {
+        card_number: '5',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },
+        {
+        card_number: '6',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '6',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '7',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '7',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '8',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '8',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '9',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '9',
+        card_color: 'yellow',
+        card_action: 'regular',
+        png:''
+    },    {
+        card_number: '+2',
+        card_color: 'yellow',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: '+2',
+        card_color: 'yellow',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'reverse',
+        card_color: 'yellow',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'reverse',
+        card_color: 'yellow',
+        card_action: 'action',
+        png:''
+    },    {
+        card_number: 'skip',
+        card_color: 'yellow',
+        card_action: 'action',
+        png:''
+    },   {
+        card_number: 'skip',
+        card_color: 'yellow',
+        card_action: 'action',
+        png:''
+    },   
+    {
+        card_number:'+4',
+        card_color:'black',
+        card_action:'action',
+        png:''
+    },   
+    {
+        card_number:'+4',
+        card_color:'black',
+        card_action:'action',
+        png:''
+    },
+    {
+        card_number:'+4',
+        card_color:'black',
+        card_action:'action',
+        png:''
+    },
+    {
+        card_number:'+4',
+        card_color:'black',
+        card_action:'action',
+        png:''
+    },
+    {
+        card_number:'change',
+        card_color:'black',
+        card_action:'action',
+        png:''
+    },
+    {
+        card_number:'change',
+        card_color:'black',
+        card_action:'action',
+        png:''
+    },
+    {
+        card_number:'change',
+        card_color:'black',
+        card_action:'action',
+        png:''
+    },    
+    {
+        card_number:'change',
+        card_color:'black',
+        card_action:'action',
+        png:''
+    },
+],
 
     // check what is played and add what is played and be reshuffled when the deck is empty
     cardInPlay:[],
@@ -34,22 +634,7 @@ const game = {
 
     //track what number is currently showing
     currentnNumber: null,
-    
-    // generate a new deck of uno
-    // in total the size should 108
-    generateDeck(){
 
-    },
-    // generate new number cards 1-9 *2
-    // generate card 0 *1 
-    generateNumber(){
-
-    },
-    // generate new speical cards colors: +2, reverse, skip*2
-    // no-color: +4,change color *2 
-    generateSpeical(){
-
-    },
     // will  interpert the card the player just played 
     cardInterperter(){
 
@@ -89,7 +674,7 @@ const game = {
 }
 
 
-
+console.log(game.deck.length);
 
 /* 
     player object should hold what the player should see and handle the player in a sense play the card 
