@@ -9,6 +9,9 @@ The Project will be a browser card game, based on the game Uno. The reason why I
 
 
 
+____
+
+
 ### User Stories:
 
 I. The user will click start and will be greeted with 3 opitions on how many computer he wants to play with
@@ -27,3 +30,7 @@ VI.This will go on until the player or one of the computer has two card left the
 VII.The game will end when one of the players has no card left in their hand and they will be declared the winner
 
 VIII. Then the screen will clear and show play agian button
+
+
+____
+
