@@ -630,22 +630,30 @@ const game = {
     currentFlow: 'clockwise',
 
     // track what color is being played
-    currentColor: null,
+    currentColor: 'red',
 
     //track what number is currently showing
-    currentnNumber: null,
+    currentNumber: '7',
 
     // will  interpert the card the player just played 
-    cardInterperter(){
-
+    cardInterperter(card){
+        if(card.card_color === this.currentColor || card.card_number===this.currentNumber){ 
+        this.changeColor(card);
+        this.changeNumber(card);
+        }
     },
     // check if different from currentcolor if so changed it to this
-    changeColor(){
+    changeColor(card){
+        if(card.card_color != this.currentColor){
+            this.currentColor = card.card_color;
+        }
 
     },
     // check if differnt from number if so changed it to this
-    changeNumber(){
-
+    changeNumber(card){
+        if(card.card_number != this.currentNumber){
+            this.currentNumber = card.card_number;
+        }
     },
 
     // will  change which way the game flow will go with reverse hand
@@ -672,7 +680,13 @@ const game = {
     }
 
 }
-
+const test = {
+    card_number:'5',
+    card_color:'green'
+}
+game.cardInterperter(test)
+console.log(game.currentNumber);
+console.log(game.currentColor)
 
 console.log(game.deck.length);
 
