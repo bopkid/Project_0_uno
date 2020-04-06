@@ -7,9 +7,18 @@
 // 4, whos turn is it
 // 
 //  method:
-// 
-// 
-// 
+// generateDeck
+// generateNumber
+//   generateSpeical(){
+//  cardInterperter
+// changeColor
+//changeNumber
+//changeFlow
+//callingUno
+//dealCards
+//checkForVictor
+//
+
 const game = {
     // contains the whole deck 108 cards
     deck:[],
@@ -68,8 +77,69 @@ const game = {
 
     },
     // check who has no card left declar that person is the victor
+    // and show who has won
     checkForVictor(){
 
+    },
+    // clear the game borad and show to play again?
+    clearAndPlay(){
+
     }
+
+}
+
+
+
+
+/* 
+    player object should hold what the player should see and handle the player in a sense play the card 
+    
+    what should this objct hold:
+    1. the cards a array of objects
+    2. Uno a bool 
+    method: 
+    1. playerCard()
+ */
+const player ={
+    playerHand:[],
+    hasUno: false,
+
+    playCard(){
+
+    }
+}
+
+/* 
+    class  computer will be able to make the needed computer 
+
+    what should this class hold:
+    1. the cards a array of objects
+    2. Uno a bool 
+    method: 
+    1. playerCard()
+ */
+
+class computer{
+    constructor(playerId){
+        this.playerHand = [];
+        this.hasUno = false;
+        this.playerId = playerId;
+    }
+    playCard(){
+        
+    }
+
+}
+
+// this object will hold the logic to make the needed to make the computder class needed 
+
+const computersList = {
+    computerPlayers:[],
+// make the needed computer player
+    generateComputerPlayers(){
+        const newComputer = new computer(this.computersList.length);
+        this.computerPlayers.push(newComputer)
+        return newComputer;
+        }
 
 }
