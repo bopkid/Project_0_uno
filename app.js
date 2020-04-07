@@ -623,17 +623,20 @@ const game = {
     },
 ],
 
-    // check what is played and add what is played and be reshuffled when the deck is empty
+    // keeps track the cards that are in player hands
+    cardsInHand:[],
+    // keeps track what has been played from the player hand
     cardInPlay:[],
+    
 
     // will change who will go next with the reverse
     currentFlow: 'clockwise',
 
     // track what color is being played
-    currentColor: 'red',
+    currentColor: null,
 
     //track what number is currently showing
-    currentNumber: '7',
+    currentNumber: null,
 
     // will  interpert the card the player just played 
     cardInterperter(card){
@@ -696,11 +699,48 @@ const game = {
     dealToPlayer(){
         const deal = this.randomCard();
         player.playerHand.push(this.deck[deal])
-        this.cardInPlay.push(this.cardInPlay);
+        this.cardsInHand.push(this.cardsInHand);
         this.deck.splice(deal,1)
 
 
     
+    },
+    startingCards(){
+        const random = this.randomCard();
+        this.cardInPlay.push(this.deck[random]);
+        let firstCard = this.deck[random];
+        this.deck.splice(random,1);
+
+
+        const startCard =document.querySelector('#current_Card');
+        const card = document.createElement('div')
+
+        card.setAttribute('id', 'current')
+        card.classList.add('player_hand')
+
+
+        if(firstCard.card_color === 'yellow'){
+            card.classList.add('yellow')
+        }
+        else if(firstCard.card_color === 'blue'){
+            card.classList.add('blue')
+        }
+   
+        else if(firstCard.card_color === 'red'){
+            card.classList.add('red')
+        }
+        else if(firstCard.card_color === 'green'){
+            card.classList.add('green')
+        }
+        card.innerHTML = firstCard.card_number;
+        startCard.appendChild(card)
+        
+        
+        this.currentColor = firstCard.card_color;
+        this.currentNumber = firstCard.card_number;
+        console.log(this.currentNumber);
+        console.log(this.currentColor);
+        
     },
    
     // check who has no card left declar that person is the victor
@@ -711,7 +751,8 @@ const game = {
     // clear the game borad and show to play again?
     clearAndPlay(){
 
-    }
+    },
+
 
 }
 
@@ -741,6 +782,7 @@ const player ={
         })
         
     },
+    // display card only for player not computer or the current card in play
     displayCard(){
         
         for(let i = 0; i < this.playerHand.length;i++){
@@ -839,3 +881,6 @@ card.addEventListener('click',(event)=>{
    console.log(game.currentNumber)
 })
 
+
+
+game.startingCards();
