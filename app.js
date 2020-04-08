@@ -11,8 +11,6 @@
 // generateNumber
 //   generateSpeical(){
 //  cardInterperter
-// changeColor
-//changeNumber
 //changeFlow
 //callingUno
 //dealCards
@@ -638,35 +636,6 @@ const game = {
     //track what number is currently showing
     currentNumber: null,
 
-    // will  interpert the card the player just played 
-    cardInterperter(card){
-        
-        if(card[1]=== this.currentColor || (card[1] === 'black')){
-            if((card[1] === 'black')){
-                game.currentColor = 'black'
-            }
-            
-            return true
-        }
-        else if(this.currentColor ==='black'){
-            this.currentColor = card[1]
-            return true
-        }
-      
-      
-    },
-    // check if different from currentcolor if so changed it to this
-    changeColor(card){
-        console.log(card[1])
-      game.currentColor = card[1];
-      return true
-
-    },
-    // check if differnt from number if so changed it to this
-    changeNumber(card){
-        console.log(card)
-       game.currentNumber = card
-    },
     // select a random card from the deck
     randomCard(){
         const random =  Math.floor(Math.random()*Math.floor(this.deck.length))
@@ -732,6 +701,9 @@ const game = {
         else if(firstCard.card_color === 'green'){
             card.classList.add('green')
         }
+        else if(firstCard.card_color === 'black'){
+            card.classList.add('black')
+        }
         card.innerHTML = firstCard.card_number;
         startCard.appendChild(card)
         
@@ -742,6 +714,7 @@ const game = {
         console.log(this.currentColor);
         
     },
+
    
     // check who has no card left declar that person is the victor
     // and show who has won
@@ -752,8 +725,9 @@ const game = {
     clearAndPlay(){
 
     },
-
-
+    cardInterperter(card){
+        
+    }
 }
 
 /* 
@@ -868,17 +842,28 @@ player.displayCard();
 
 const card = document.querySelector('.hand');
 card.addEventListener('click',(event)=>{
- 
-    
-   if(game.cardInterperter(event.target.classList))
-   {
-      game.changeNumber(event.target.innerText)
-   }
-   else if(game.currentNumber == event.target.innerText){
-       game.changeColor(event.target.classList)
-   }
-   console.log(game.currentColor);
-   console.log(game.currentNumber)
+    const current = document.querySelector('#current');
+
+    if(event.target.classList.contains('black')){
+        game.currentNumber= event.target.innerHTML;
+        game.currentColor = event.target.classList[1];
+        current.innerHTML = event.target.innerHTML;
+        current.classList.replace(current.classList[1], event.target.classList[1])
+    }
+    else if(event.target.classList.contains(current.classList[1])){
+        console.log('same color')
+        game.currentNumber=  event.target.innerHTML
+        current.innerHTML = event.target.innerHTML;;
+    }
+    else if(event.target.innerText == current.innerHTML){
+        console.log('same number');
+        current.classList.replace(current.classList[1],event.target.classList[1]);
+        game.currentColor = event.target.classList[1];
+        
+    }
+    console.log(game.currentColor)
+    console.log(game.currentNumber)
+
 })
 
 
