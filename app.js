@@ -675,7 +675,9 @@ const game = {
     
     },
     startingCards(){
+        const changer = document.querySelector('#change_color')
         const random = this.randomCard();
+
         this.cardInPlay.push(this.deck[random]);
         let firstCard = this.deck[random];
         this.deck.splice(random,1);
@@ -702,7 +704,11 @@ const game = {
         }
         else if(firstCard.card_color === 'black'){
             card.classList.add('black')
+            changer.classList.replace('noDisplay','display')
         }
+
+
+        
         card.innerHTML = firstCard.card_number;
         startCard.appendChild(card)
         
@@ -743,6 +749,30 @@ const game = {
 const player ={
     playerHand:[],
     hasUno: false,
+    drawCard(){
+        const randomCard =game.randomCard();
+        const add = document.querySelector('.hand')
+        this.playerHand.push(game.deck[randomCard]);
+       
+        const newCard = document.createElement('span');
+        newCard.classList.add('player_hand');
+
+        if(game.deck[randomCard].card_color==='yellow'){
+            newCard.classList.add('yellow')
+        }
+       else if(game.deck[randomCard].card_color==='red'){
+            newCard.classList.add('red')
+        }
+       else if(game.deck[randomCard].card_color==='blue'){
+            newCard.classList.add('blue')
+        }
+        else if(game.deck[randomCard].card_color==='green'){
+            newCard.classList.add('green')
+        }
+        newCard.innerHTML = game.deck[randomCard].card_number
+        add.appendChild(newCard);
+        game.deck.splice(randomCard,1);
+    },
 
     playCard(card){
         for(let i = 0;i< this.playerHand.length;i++){
@@ -756,7 +786,7 @@ const player ={
                 this.playerHand.splice(i,1);
                 return true
             }
-            console.log(this.playerHand)
+            
         }
         
     },
@@ -877,7 +907,7 @@ card.addEventListener('click',(event)=>{
         
     }
    
-
+    console.log(game.cardInPlay)
 })
 
 changer.addEventListener('click', (e)=>{
@@ -888,5 +918,12 @@ changer.addEventListener('click', (e)=>{
     console.log(game.currentColor)
     changer.classList.replace('display','noDisplay')
 })
+
+const draw = document.querySelector('#deck');
+
+draw.addEventListener('click', (e)=>{
+    player.drawCard();
+})
+
 
 game.startingCards();
