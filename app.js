@@ -619,8 +619,9 @@ const game = {
         card_action:'action',
         png:''
     },
-],
-
+    ],
+    playerTurn:[]
+    ,
     // keeps track the cards that are in player hands
     cardsInHand:[],
     // keeps track what has been played from the player hand
@@ -735,9 +736,21 @@ const game = {
     clearAndPlay(){
 
     },
-    // dertermine what the action will be base on the card
-    cardInterperter(){
+    startGame(){
+        computersList.generateComputerPlayers();
+        computersList.generateComputerPlayers();
+        game.dealStarterHand();
+        
 
+    }
+    ,
+    // dertermine what the action will be base on the card
+    cardInterperter(index){
+        if(player.playerHand[index].card_action === 'action'){
+            if(player.playerHand[index].card_number === '+2'){
+        
+            }
+        }
     },
 
 }
@@ -786,12 +799,14 @@ const player ={
     playCard(card){
         for(let i = 0;i< this.playerHand.length;i++){
             if(card.classList[1]== this.playerHand[i].card_color){
+                this.cardInterperter(index);
                 game.cardInPlay.push(this.playerHand[i]);
                 this.playerHand.splice(i,1);
                  return true
             }
             else if (card.innerHTML == this.playerHand[i].card_number){
                 game.cardInPlay.push(this.playerHand[i]);
+                this.cardInterperter(index);
                 this.playerHand.splice(i,1);
                 return true
             }
@@ -851,9 +866,10 @@ class computer{
         this.calledUno = false;
         this.playerId = playerId;
     }
-    playCard(){
-        
+    autoPlayCard(){
+
     }
+
 
 }
 
@@ -876,18 +892,21 @@ const computersList = {
 
 
 
-computersList.generateComputerPlayers();
-computersList.generateComputerPlayers();
-game.dealStarterHand();
-
-
-
-player.displayCard();
-
-
 const card = document.querySelector('.hand');
 const changer = document.querySelector('#change_color')
 const uno = document.querySelector('#Uno')
+const start = document.querySelector('.startUno')
+const titleStart = document.querySelector('#start')
+const computerPicker = document.querySelector('.computer-player')
+
+
+
+start.addEventListener('click',()=>{
+    start.classList.add('noDisplay')
+    computerPicker.classList.replace('noDisplay', 'display')
+})
+
+
 
 uno.addEventListener('click', ()=>{
     player.calledUno = true;
@@ -933,13 +952,13 @@ card.addEventListener('click',(event)=>{
         uno.classList.replace('display','noDisplay')
 
     }
-    if(player.playerHand.length === 1){
-        if(player.calledUno === false){
-            {for(let i = 0; i<2;i++){
-                player.drawCard()
+        if(player.playerHand.length === 1){
+            if(player.calledUno === false){
+                {for(let i = 0; i<2;i++){
+                    player.drawCard()
+                }
             }
         }
-    }
     }
 
     // checks if player has called uno before last card

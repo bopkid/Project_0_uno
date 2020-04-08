@@ -2,6 +2,30 @@ body{
     background-color: darkgreen;
 }
 
+ul{
+    list-style: none;
+}
+
+
+#start{
+    text-align: center;
+    padding-top: 5.5%;
+    font-size: 7em;
+    color: white;
+    justify-content: center;
+    
+}
+
+ 
+#start h1{
+    margin: 0;
+    padding: 0;
+    border-right: #FBCA00 solid 20px;
+    border-left: #3EBC00 solid 20px;
+    border-top: #f51b00 solid 20px;
+    border-bottom: #005FAF solid 20px;
+    background-color: black;
+}
 
 #player{
     border:  10px red solid;
@@ -70,4 +94,16 @@ body{
 
 .noDisplay{
     display: none;
+}
+
+
+.startUno{
+    margin-right: 50%;
+    margin-left: 42.5%;
+}
+
+
+
+.computer-player li{
+    border: orange 1px solid;
 }
