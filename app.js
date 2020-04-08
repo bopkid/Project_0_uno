@@ -694,7 +694,6 @@ const game = {
         else if(firstCard.card_color === 'blue'){
             card.classList.add('blue')
         }
-   
         else if(firstCard.card_color === 'red'){
             card.classList.add('red')
         }
@@ -725,9 +724,10 @@ const game = {
     clearAndPlay(){
 
     },
-    cardInterperter(card){
-        
-    }
+    cardInterperter(){
+
+    },
+
 }
 
 /* 
@@ -745,15 +745,7 @@ const player ={
     hasUno: false,
 
     playCard(){
-        const card = document.querySelector('.hand');
-        card.addEventListener('click',(event)=>{
-         
-            console.log(event.target.classList)
-           if(game.cardInterperter(event.target.classList))
-           {
-               console.log('red')
-           }
-        })
+        
         
     },
     // display card only for player not computer or the current card in play
@@ -833,29 +825,34 @@ computersList.generateComputerPlayers();
 computersList.generateComputerPlayers();
 game.dealStarterHand();
 
-// console.log(player.playerHand)
-// console.log(computersList.computerPlayers[0].playerHand)
-// console.log(player.playerHand[0].card_color)
+
 
 player.displayCard();
 
 
 const card = document.querySelector('.hand');
+const changer = document.querySelector('#change_color')
+
 card.addEventListener('click',(event)=>{
     const current = document.querySelector('#current');
+    const changerSytle = document.querySelector('#change_color')
 
     if(event.target.classList.contains('black')){
+        event.target.remove();
         game.currentNumber= event.target.innerHTML;
         game.currentColor = event.target.classList[1];
         current.innerHTML = event.target.innerHTML;
         current.classList.replace(current.classList[1], event.target.classList[1])
+        changerSytle.classList.replace('noDisplay','display')
     }
     else if(event.target.classList.contains(current.classList[1])){
+        event.target.remove();
         console.log('same color')
         game.currentNumber=  event.target.innerHTML
         current.innerHTML = event.target.innerHTML;;
     }
     else if(event.target.innerText == current.innerHTML){
+        event.target.remove();
         console.log('same number');
         current.classList.replace(current.classList[1],event.target.classList[1]);
         game.currentColor = event.target.classList[1];
@@ -866,6 +863,13 @@ card.addEventListener('click',(event)=>{
 
 })
 
-
+changer.addEventListener('click', (e)=>{
+    const current = document.querySelector('#current');
+    console.log('click')
+    game.currentColor = e.target.classList[0]
+    current.classList.replace(current.classList[1], e.target.classList[0])
+    console.log(game.currentColor)
+    changer.classList.replace('display','noDisplay')
+})
 
 game.startingCards();
