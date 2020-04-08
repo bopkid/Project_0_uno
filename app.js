@@ -744,8 +744,20 @@ const player ={
     playerHand:[],
     hasUno: false,
 
-    playCard(){
-        
+    playCard(card){
+        for(let i = 0;i< this.playerHand.length;i++){
+            if(card.classList[1]== this.playerHand[i].card_color){
+                game.cardInPlay.push(this.playerHand[i]);
+                this.playerHand.splice(i,1);
+                 return true
+            }
+            else if (card.innerHTML == this.playerHand[i].card_number){
+                game.cardInPlay.push(this.playerHand[i]);
+                this.playerHand.splice(i,1);
+                return true
+            }
+            console.log(this.playerHand)
+        }
         
     },
     // display card only for player not computer or the current card in play
@@ -834,11 +846,15 @@ const card = document.querySelector('.hand');
 const changer = document.querySelector('#change_color')
 
 card.addEventListener('click',(event)=>{
+    
     const current = document.querySelector('#current');
     const changerSytle = document.querySelector('#change_color')
 
     if(event.target.classList.contains('black')){
+       
         event.target.remove();
+        player.playCard(event.target)
+        console.log(player.playerHand)
         game.currentNumber= event.target.innerHTML;
         game.currentColor = event.target.classList[1];
         current.innerHTML = event.target.innerHTML;
@@ -846,20 +862,21 @@ card.addEventListener('click',(event)=>{
         changerSytle.classList.replace('noDisplay','display')
     }
     else if(event.target.classList.contains(current.classList[1])){
+        player.playCard(event.target)
         event.target.remove();
         console.log('same color')
         game.currentNumber=  event.target.innerHTML
         current.innerHTML = event.target.innerHTML;;
     }
     else if(event.target.innerText == current.innerHTML){
+        player.playCard(event.target)
         event.target.remove();
         console.log('same number');
         current.classList.replace(current.classList[1],event.target.classList[1]);
         game.currentColor = event.target.classList[1];
         
     }
-    console.log(game.currentColor)
-    console.log(game.currentNumber)
+   
 
 })
 
