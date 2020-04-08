@@ -768,6 +768,9 @@ const player ={
         }
         else if(game.deck[randomCard].card_color==='green'){
             newCard.classList.add('green')
+        }  
+        else if(game.deck[randomCard].card_color==='black'){
+            newCard.classList.add('black')
         }
         newCard.innerHTML = game.deck[randomCard].card_number
         add.appendChild(newCard);
