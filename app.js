@@ -649,6 +649,11 @@ const game = {
 
     //check each player hands size and if 2 may call uno
     callingUno(){
+        const uno = document.querySelector('#Uno')
+        if(player.playerHand.length ===2 ){  
+            console.log('UNO')
+            uno.classList.replace('noDisplay','display')
+        }
 
     },
     // this will at the start of the game give the player the cards to the hand
@@ -730,6 +735,7 @@ const game = {
     clearAndPlay(){
 
     },
+    // dertermine what the action will be base on the card
     cardInterperter(){
 
     },
@@ -748,7 +754,7 @@ const game = {
  */
 const player ={
     playerHand:[],
-    hasUno: false,
+    calledUno: false,
     drawCard(){
         const randomCard =game.randomCard();
         const add = document.querySelector('.hand')
@@ -842,7 +848,7 @@ const player ={
 class computer{
     constructor(playerId){
         this.playerHand = [];
-        this.hasUno = false;
+        this.calledUno = false;
         this.playerId = playerId;
     }
     playCard(){
@@ -866,6 +872,10 @@ const computersList = {
     }
 
 }
+
+
+
+
 computersList.generateComputerPlayers();
 computersList.generateComputerPlayers();
 game.dealStarterHand();
@@ -877,11 +887,20 @@ player.displayCard();
 
 const card = document.querySelector('.hand');
 const changer = document.querySelector('#change_color')
+const uno = document.querySelector('#Uno')
+
+uno.addEventListener('click', ()=>{
+    player.calledUno = true;
+    console.log(player.calledUno)
+    uno.classList.replace('display','noDisplay')
+})
 
 card.addEventListener('click',(event)=>{
+
     
     const current = document.querySelector('#current');
     const changerSytle = document.querySelector('#change_color')
+    const uno = document.querySelector('#Uno')
 
     if(event.target.classList.contains('black')){
        
@@ -909,9 +928,25 @@ card.addEventListener('click',(event)=>{
         game.currentColor = event.target.classList[1];
         
     }
+    game.callingUno();
+    if(player.playerHand.length > 2 ){
+        uno.classList.replace('display','noDisplay')
+
+    }
+    if(player.playerHand.length === 1){
+        if(player.calledUno === false){
+            {for(let i = 0; i<2;i++){
+                player.drawCard()
+            }
+        }
+    }
+    }
+
+    // checks if player has called uno before last card
    
-    console.log(game.cardInPlay)
+    console.log(player.playerHand)
 })
+
 
 changer.addEventListener('click', (e)=>{
     const current = document.querySelector('#current');
@@ -925,7 +960,10 @@ changer.addEventListener('click', (e)=>{
 const draw = document.querySelector('#deck');
 
 draw.addEventListener('click', (e)=>{
+    const uno = document.querySelector('#Uno')
     player.drawCard();
+    uno.classList.replace('display','noDisplay')
+
 })
 
 
