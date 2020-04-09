@@ -902,116 +902,82 @@ const comp1= {
     isTurn: false
     ,
     autoPlayCard(){
+        console.log(this.computerHand)
         const current = document.querySelector('#current');
-        let newlength = this.computerHand.length
+        for(let i= 0;i < this.computerHand.length;i++){
+            console.log(this.computerHand.length)
+            if(this.computerHand[i].card_color=== game.currentColor){
 
-        if(this.isTurn){
-            for(let i = 0;i < newlength ;i++){
-               
-                if(this.computerHand[i].card_color === game.currentColor )
-                {
-                
-                game.cardInPlay.push(this.computerHand[i])
+                console.log(`found one ${this.computerHand[i].card_color}`)
+                game.currentNumber = this.computerHand[i].card_number;
+                current.innerHTML = this.computerHand[i].card_number;
+
                 this.computerHand.splice(i,1)
-                this.isTurn = false;
-
-                if(game.maxComp ==1 ){
-                    if( this.computerHand.card_number == '+2'){
-                     for(let i = 0; i < 2;i++){
-                         player.drawCard();
-                     }
-                    
-                 }
-                }
-
-                current.classList.replace(game.currentColor,this.computerHand[i].card_color)
-               current.innerHTML = this.computerHand[i].card_number
-
-
-                break;
-                }
-                else if(this.computerHand[i].card_number== game.currentNumber){
-                    
-
-                    game.cardInPlay.push(this.computerHand[i])
-                    this.computerHand.splice(i,1)
-                    this.isTurn = false;
-
-                    current.classList.replace(game.currentColor,this.computerHand[i].card_color);
-                    current.innerHTML = this.computerHand[i].card_number;
-              
-                    if(game.maxComp ==1 ){
-                        if( this.computerHand.card_number == '+2'){
-                        for(let i = 0; i < 2;i++){
-                            player.drawCard();
-                        }
-                        
-                    }
-                    }
-
-
-                    break;
-                }
-                else if(this.computerHand[i].color == 'black'){
-             
-                    game.cardInPlay.push(this.computerHand[i]);
-                    this.computerHand.splice(i,1);
-                   
-                    current.classList.replace(game.currentColor,this.computerHand[i].card_color)
-                    current.innerHTML = this.computerHand[i].card_number
-
-
-                    const random =  Math.floor(Math.random()*Math.floor(4))
-                    console.log(random)
-                    if(random === 0){
-                        
-                        current.classList.replace(game.currentColor,'red');
-                        game.currentColor = 'red'
-                    }
-                   else if(random === 1){
-                        
-                        current.classList.replace(game.currentColor,'blue');
-                        game.currentColor = 'blue'
-                    }
-                    else if(random === 2){
-                        
-                        current.classList.replace(game.currentColor,'yellow');
-                        game.currentColor = 'yellow'
-                    }
-                   else if(random === 3){
-                        
-                        current.classList.replace(game.currentColor,'green');
-                        game.currentColor = 'green'
-                    }
-
-
-                    if(game.maxComp ===1 ){
-                    
-                       if( this.computerHand.card_number == '+4'){
-                        for(let i = 0; i < 4;i++){
-                            player.drawCard();
-                        }
-                       }
-                    }
-                    this.isTurn = false;
-
-                    break;
-                }
-              else if  (i=== this.computerHand.length-1 ) {
-                    console.log(comp1.computerHand)
-                   
-                    this.getNewCard()
-                 
-                    this.isTurn = false;
-                    break;
-                }
+                console.log(`chaned${this.computerHand.length}`)
+                return true;
+            
             }
-        } 
+            else if(this.computerHand[i].card_number=== game.currentNumber){
+
+                console.log(`found a same number`);
+
+                game.currentColor = this.computerHand[i].card_color;
+                current.classList.replace(game.currentColor, this.computerHand[i].card_color)
+
+                this.computerHand.splice(i,1)
+                console.log(`chaned${this.computerHand.length}`)
+                return true
+         
+            }
+            else if (this.computerHand[i].card_color=== 'black'){
+                console.log(`found speical MUST PLAY`)
+
+              const random=  Math.floor(Math.random() * Math.floor(4));
+              console.log(random)
+              current.innerHTML = this.computerHand[i].card_number;
+              if(random === 0){
+                  current.classList.replace(game.currentColor, 'red')
+                  game.currentColor = 'red';
+                 
+                  console.log('red change')
+                  return true
+              }
+            else if(random === 1){
+            
+                current.classList.replace(game.currentColor, 'blue')
+                game.currentColor = 'blue';
+                console.log('blue change')
+                return true
+            }
+           else if(random === 2){
+                current.classList.replace(game.currentColor,'yellow')
+                game.currentColor = 'yellow';
+                console.log('yellow change')
+                return true
+            }
+            else  if(random === 3){
+                
+                current.classList.replace(game.currentColor, 'green')
+                game.currentColor = 'green';
+                console.log('green change')
+                return true
+            }
+           
+            }
+            else if(i === this.computerHand.length -1 ){
+                console.log(`need to draw a card`)
+                this.getNewCard()
+                console.log(`chaned${this.computerHand.length}`)
+                return true
+            }
+        }
+
     },
     getNewCard(){
         const deal = game.randomCard()
         this.computerHand.push(game.deck[deal])
         game.deck.splice(deal,1)
+        return deal;
 
     }
 }
@@ -1154,6 +1120,7 @@ card.addEventListener('click',(event)=>{
     const current = document.querySelector('#current');
     const changerSytle = document.querySelector('#change_color')
     const uno = document.querySelector('#Uno')
+    console.log(event.target.innerHTML)
 
     if(event.target.classList.contains('black')){
        
@@ -1166,17 +1133,17 @@ card.addEventListener('click',(event)=>{
 
         current.classList.replace(current.classList[1], event.target.classList[1])
         changerSytle.classList.replace('noDisplay','display')
-
-        comp1.isTurn = true;
-        comp1.autoPlayCard()
+        console.log(game.currentColor)
+        // comp1.isTurn = true;
+        // comp1.autoPlayCard()
     }
     else if(event.target.classList.contains(current.classList[1])){
         player.playCard(event.target)
         event.target.remove();
       
         game.currentNumber=  event.target.innerHTML
-        current.innerHTML = event.target.innerHTML;;
-        comp1.isTurn = true;
+        current.innerHTML = event.target.innerText;;
+        // comp1.isTurn = true;
         comp1.autoPlayCard()
     }
     else if(event.target.innerText == current.innerHTML){
@@ -1185,7 +1152,7 @@ card.addEventListener('click',(event)=>{
 
         current.classList.replace(current.classList[1],event.target.classList[1]);
         game.currentColor = event.target.classList[1];
-        comp1.isTurn = true;
+        // comp1.isTurn = true;
         comp1.autoPlayCard()
         
     }
@@ -1202,7 +1169,7 @@ card.addEventListener('click',(event)=>{
             }
         }
     }
-
+    console.log(game.currentColor)
     // checks if player has called uno before last card
    
 
@@ -1214,7 +1181,8 @@ changer.addEventListener('click', (e)=>{
 
     game.currentColor = e.target.classList[0]
     current.classList.replace(current.classList[1], e.target.classList[0])
-  
+    comp1.isTurn = true;
+    comp1.autoPlayCard()
     changer.classList.replace('display','noDisplay')
 })
 
