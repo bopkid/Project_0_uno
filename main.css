@@ -44,7 +44,12 @@ ul{
     justify-content: center;
     display: flex;
 }
-
+#comp1{
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 /* color taken from uno minialist */
 .yellow{
@@ -105,4 +110,16 @@ ul{
 
 .computer-player li{
     border: orange 1px solid;
+}
+
+
+
+.comp1Card{
+    font-size: 10% vw;
+    text-align: center;
+    margin: 10px;
+    color: white;
+    padding: 100px 70px;
+    width: 25px;
+    max-width: 25px;
 }

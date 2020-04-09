@@ -989,9 +989,18 @@ const comp1= {
 
     },
     getNewCard(){
+        const comp1Hand = document.querySelector('#comp1')
+        const newCard = document.createElement('span')
+        newCard.classList.add('comp1Card')
+        newCard.classList.add('black')
+        
+        comp1Hand.appendChild(newCard)
+
         const deal = game.randomCard()
         this.computerHand.push(game.deck[deal])
         game.deck.splice(deal,1)
+
+        
         return deal;
 
     }
@@ -1089,6 +1098,13 @@ const comp2= {
     }
     ,
     getNewCard(){
+        const comp2Hand = document.querySelector('#comp2')
+        const newCard = document.createElement('span')
+        newCard.classList.add('comp2Card')
+        newCard.classList.add('black')
+        
+        comp2Hand.appendChild(newCard)
+
         const deal = game.randomCard()
         this.computer2Hand.push(game.deck[deal])
         game.deck.splice(deal,1)
@@ -1184,6 +1200,12 @@ const comp3= {
     ,
     
     getNewCard(){
+        const comp3Hand = document.querySelector('#comp3')
+        const newCard = document.createElement('span')
+        newCard.classList.add('comp3Card')
+        newCard.classList.add('black')
+        
+        comp3Hand.appendChild(newCard)
         const deal = game.randomCard()
         this.computer3Hand.push(game.deck[deal])
         game.deck.splice(deal,1)
@@ -1361,6 +1383,11 @@ const draw = document.querySelector('#deck');
 draw.addEventListener('click', (e)=>{
     const uno = document.querySelector('#Uno')
     player.drawCard();
+    if(game.deck.length === 0){
+        for(let i ; i< game.cardInPlay.length;i++){
+        game.deck.push(game.cardInPlay.pop())
+        }
+    }
     comp1.isTurn = true;
     comp1.autoPlayCard()
     uno.classList.replace('display','noDisplay')
