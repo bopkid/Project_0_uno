@@ -935,6 +935,7 @@ const comp1= {
               const random=  Math.floor(Math.random() * Math.floor(4));
               console.log(random)
               current.innerHTML = this.computerHand[i].card_number;
+               this.computerHand.splice(i,1)
                 if(this.computerHand[i].card_number === '+4'){
                     if(game.maxComp === 1){
                         for(let i = 0; i < 4;i++){
@@ -996,49 +997,51 @@ const comp1= {
     }
 }
 
+// Stretch goal
 const comp2= {
     computer2Hand:[],
-   autoPlayCard(){
-        console.log(this.computerHand)
+    autoPlayCard(){ 
+        console.log(this.computer2Hand)
         const current = document.querySelector('#current');
-        for(let i= 0;i < this.computerHand.length;i++){
-            console.log(this.computerHand.length)
-            if(this.computerHand[i].card_color=== game.currentColor){
+        for(let i= 0;i < this.computer2Hand.length;i++){
+            console.log(this.computer2Hand.length)
+            if(this.computer2Hand[i].card_color=== game.currentColor){
 
-                console.log(`found one ${this.computerHand[i].card_color}`)
-                game.currentNumber = this.computerHand[i].card_number;
-                current.innerHTML = this.computerHand[i].card_number;
+                console.log(`found one ${this.computer2Hand[i].card_color}`)
+                game.currentNumber = this.computer2Hand[i].card_number;
+                current.innerHTML = this.computer2Hand[i].card_number;
 
-                this.computerHand.splice(i,1)
-                console.log(`chaned${this.computerHand.length}`)
-                comp3.autoPlayCard();
+                this.computer2Hand.splice(i,1)
+                console.log(`chaned${this.computer2Hand.length}`)
+                comp2.autoPlayCard();
             
             }
-            else if(this.computerHand[i].card_number=== game.currentNumber){
+            else if(this.computer2Hand[i].card_number=== game.currentNumber){
 
                 console.log(`found a same number`);
 
-                game.currentColor = this.computerHand[i].card_color;
-                current.classList.replace(game.currentColor, this.computerHand[i].card_color)
+                game.currentColor = this.computer2Hand[i].card_color;
+                current.classList.replace(game.currentColor, this.computer2Hand[i].card_color)
 
-                this.computerHand.splice(i,1)
-                console.log(`chaned${this.computerHand.length}`)
-                comp3.autoPlayCard();
+                this.computer2Hand.splice(i,1)
+                console.log(`chaned${this.computer2Hand.length}`)
+                comp2.autoPlayCard();
          
             }
-            else if (this.computerHand[i].card_color=== 'black'){
+            else if (this.computer2Hand[i].card_color=== 'black'){
                 console.log(`found speical MUST PLAY`)
 
               const random=  Math.floor(Math.random() * Math.floor(4));
               console.log(random)
-              current.innerHTML = this.computerHand[i].card_number;
-                if(this.computerHand[i].card_number === '+4'){
+              current.innerHTML = this.computer2Hand[i].card_number;
+               this.computer2Hand.splice(i,1)
+                if(this.computer2Hand[i].card_number === '+4'){comp2
                     if(game.maxComp === 2){
                         for(let i = 0; i < 4;i++){
                             player.drawCard();
                         }
                     }
-                    else if(game.maxComp > 2){
+                    else if(game.maxComp > 1){
                         for(let i;i< 4;i++){
                             comp3.getNewCard()
                         }
@@ -1051,39 +1054,40 @@ const comp2= {
                   game.currentColor = 'red';
                  
                   console.log('red change')
-                  comp3.autoPlayCard();
+                  comp2.autoPlayCard();
               }
             else if(random === 1){
             
                 current.classList.replace(game.currentColor, 'blue')
                 game.currentColor = 'blue';
                 console.log('blue change')
-                comp3.autoPlayCard();
+                comp2.autoPlayCard();
             }
            else if(random === 2){
                 current.classList.replace(game.currentColor,'yellow')
                 game.currentColor = 'yellow';
                 console.log('yellow change')
-                comp3.autoPlayCard();
+                comp2.autoPlayCard();
             }
             else  if(random === 3){
                 
                 current.classList.replace(game.currentColor, 'green')
                 game.currentColor = 'green';
                 console.log('green change')
-                comp3.autoPlayCard();
+                comp2.autoPlayCard();
             }
            
             }
-            else if(i === this.computerHand.length -1 ){
+            else if(i === this.computer2Hand.length -1 ){
                 console.log(`need to draw a card`)
                 this.getNewCard()
-                console.log(`chaned${this.computerHand.length}`)
-                comp3.autoPlayCard();
+                console.log(`chaned${this.computer2Hand.length}`)
+                comp2.autoPlayCard();
             }
         }
 
-    },
+    }
+    ,
     getNewCard(){
         const deal = game.randomCard()
         this.computer2Hand.push(game.deck[deal])
@@ -1092,49 +1096,50 @@ const comp2= {
 
     }
 }
+// Stretch goal
 const comp3= {
     computer3Hand:[],
     autoPlayCard(){
-        console.log(this.computerHand)
+        console.log(this.computer3Hand)
         const current = document.querySelector('#current');
-        for(let i= 0;i < this.computerHand.length;i++){
-            console.log(this.computerHand.length)
-            if(this.computerHand[i].card_color=== game.currentColor){
+        for(let i= 0;i < this.computer3Hand.length;i++){
+            console.log(this.computer3Hand.length)
+            if(this.computer3Hand[i].card_color=== game.currentColor){
 
-                console.log(`found one ${this.computerHand[i].card_color}`)
-                game.currentNumber = this.computerHand[i].card_number;
-                current.innerHTML = this.computerHand[i].card_number;
+                console.log(`found one ${this.computer3Hand[i].card_color}`)
+                game.currentNumber = this.computer3Hand[i].card_number;
+                current.innerHTML = this.computer3Hand[i].card_number;
 
-                this.computerHand.splice(i,1)
-                console.log(`chaned${this.computerHand.length}`)
-                
+                this.computer3Hand.splice(i,1)
+                console.log(`chaned${this.computer3Hand.length}`)
+                comp2.autoPlayCard();
             
             }
-            else if(this.computerHand[i].card_number=== game.currentNumber){
+            else if(this.computer3Hand[i].card_number=== game.currentNumber){
 
                 console.log(`found a same number`);
 
-                game.currentColor = this.computerHand[i].card_color;
-                current.classList.replace(game.currentColor, this.computerHand[i].card_color)
+                game.currentColor = this.computer3Hand[i].card_color;
+                current.classList.replace(game.currentColor, this.computer3Hand[i].card_color)
 
-                this.computerHand.splice(i,1)
-                console.log(`chaned${this.computerHand.length}`)
-                
+                this.computer3Hand.splice(i,1)
+                console.log(`chaned${this.computer3Hand.length}`)
+                comp2.autoPlayCard();
          
             }
-            else if (this.computerHand[i].card_color=== 'black'){
+            else if (this.computer3Hand[i].card_color=== 'black'){
                 console.log(`found speical MUST PLAY`)
 
               const random=  Math.floor(Math.random() * Math.floor(4));
               console.log(random)
-              current.innerHTML = this.computerHand[i].card_number;
-                if(this.computerHand[i].card_number === '+4'){
+              current.innerHTML = this.computer3Hand[i].card_number;
+               this.computer3Hand.splice(i,1)
+                if(this.computer3Hand[i].card_number === '+4'){
                     if(game.maxComp === 3){
                         for(let i = 0; i < 4;i++){
                             player.drawCard();
                         }
                     }
-                  
                 }
 
 
@@ -1143,43 +1148,44 @@ const comp3= {
                   game.currentColor = 'red';
                  
                   console.log('red change')
-                  
+                  comp2.autoPlayCard();
               }
             else if(random === 1){
             
                 current.classList.replace(game.currentColor, 'blue')
                 game.currentColor = 'blue';
                 console.log('blue change')
-                
+                comp2.autoPlayCard();
             }
            else if(random === 2){
                 current.classList.replace(game.currentColor,'yellow')
                 game.currentColor = 'yellow';
                 console.log('yellow change')
-                
+                comp2.autoPlayCard();
             }
             else  if(random === 3){
                 
                 current.classList.replace(game.currentColor, 'green')
                 game.currentColor = 'green';
                 console.log('green change')
-                
+                comp2.autoPlayCard();
             }
            
             }
-            else if(i === this.computerHand.length -1 ){
+            else if(i === this.computer3Hand.length -1 ){
                 console.log(`need to draw a card`)
                 this.getNewCard()
-                console.log(`chaned${this.computerHand.length}`)
-                
+                console.log(`chaned${this.computer3Hand.length}`)
+                comp2.autoPlayCard();
             }
         }
 
-    },
+    }
+    ,
     
     getNewCard(){
         const deal = game.randomCard()
-        this.computer2Hand.push(game.deck[deal])
+        this.computer3Hand.push(game.deck[deal])
         game.deck.splice(deal,1)
         return deal;
 
@@ -1280,6 +1286,7 @@ card.addEventListener('click',(event)=>{
     const current = document.querySelector('#current');
     const changerSytle = document.querySelector('#change_color')
     const uno = document.querySelector('#Uno')
+
     console.log(event.target.innerHTML)
 
     if(event.target.classList.contains('black')){
@@ -1328,6 +1335,9 @@ card.addEventListener('click',(event)=>{
                 }
             }
         }
+    }
+    if(player.playerHand.length === 0){
+        alert('Congrats you have won')
     }
     console.log(game.currentColor)
     // checks if player has called uno before last card
