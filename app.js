@@ -155,27 +155,28 @@ const game = {
         card_color: 'red',
         card_action: 'action',
         png:''
-    },    {
-        card_number: 'reverse',
-        card_color: 'red',
-        card_action: 'action',
-        png:''
-    },    {
-        card_number: 'reverse',
-        card_color: 'red',
-        card_action: 'action',
-        png:''
-    },    {
-        card_number: 'skip',
-        card_color: 'red',
-        card_action: 'action',
-        png:''
-    },   {
-        card_number: 'skip',
-        card_color: 'red',
-        card_action: 'action',
-        png:''
     },   
+    //  {
+    //     card_number: 'reverse',
+    //     card_color: 'red',
+    //     card_action: 'action',
+    //     png:''
+    // },    {
+    //     card_number: 'reverse',
+    //     card_color: 'red',
+    //     card_action: 'action',
+    //     png:''
+    // },    {
+    //     card_number: 'skip',
+    //     card_color: 'red',
+    //     card_action: 'action',
+    //     png:''
+    // },   {
+    //     card_number: 'skip',
+    //     card_color: 'red',
+    //     card_action: 'action',
+    //     png:''
+    // },   
 
     {
         card_number: '1',
@@ -277,37 +278,40 @@ const game = {
         card_color: 'blue',
         card_action: 'regular',
         png:''
-    },    {
-        card_number: '+2',
-        card_color: 'blue',
-        card_action: 'action',
-        png:''
-    },    {
-        card_number: '+2',
-        card_color: 'blue',
-        card_action: 'action',
-        png:''
-    },    {
-        card_number: 'reverse',
-        card_color: 'blue',
-        card_action: 'action',
-        png:''
-    },    {
-        card_number: 'reverse',
-        card_color: 'blue',
-        card_action: 'action',
-        png:''
-    },    {
-        card_number: 'skip',
-        card_color: 'blue',
-        card_action: 'action',
-        png:''
-    },   {
-        card_number: 'skip',
-        card_color: 'blue',
-        card_action: 'action',
-        png:''
     },   
+     {
+        card_number: '+2',
+        card_color: 'blue',
+        card_action: 'action',
+        png:''
+    }, 
+       {
+        card_number: '+2',
+        card_color: 'blue',
+        card_action: 'action',
+        png:''
+    }, 
+    //    {
+    //     card_number: 'reverse',
+    //     card_color: 'blue',
+    //     card_action: 'action',
+    //     png:''
+    // },    {
+    //     card_number: 'reverse',
+    //     card_color: 'blue',
+    //     card_action: 'action',
+    //     png:''
+    // },    {
+    //     card_number: 'skip',
+    //     card_color: 'blue',
+    //     card_action: 'action',
+    //     png:''
+    // },   {
+    //     card_number: 'skip',
+    //     card_color: 'blue',
+    //     card_action: 'action',
+    //     png:''
+    // },   
     {
         card_number: '1',
         card_color: 'green',
@@ -418,27 +422,28 @@ const game = {
         card_color: 'green',
         card_action: 'action',
         png:''
-    },    {
-        card_number: 'reverse',
-        card_color: 'green',
-        card_action: 'action',
-        png:''
-    },    {
-        card_number: 'reverse',
-        card_color: 'green',
-        card_action: 'action',
-        png:''
-    },    {
-        card_number: 'skip',
-        card_color: 'green',
-        card_action: 'action',
-        png:''
-    },   {
-        card_number: 'skip',
-        card_color: 'green',
-        card_action: 'action',
-        png:''
     },   
+    // {
+    //     card_number: 'reverse',
+    //     card_color: 'green',
+    //     card_action: 'action',
+    //     png:''
+    // },    {
+    //     card_number: 'reverse',
+    //     card_color: 'green',
+    //     card_action: 'action',
+    //     png:''
+    // },    {
+    //     card_number: 'skip',
+    //     card_color: 'green',
+    //     card_action: 'action',
+    //     png:''
+    // },   {
+    //     card_number: 'skip',
+    //     card_color: 'green',
+    //     card_action: 'action',
+    //     png:''
+    // },   
 
     {
         card_number: '1',
@@ -550,27 +555,28 @@ const game = {
         card_color: 'yellow',
         card_action: 'action',
         png:''
-    },    {
-        card_number: 'reverse',
-        card_color: 'yellow',
-        card_action: 'action',
-        png:''
-    },    {
-        card_number: 'reverse',
-        card_color: 'yellow',
-        card_action: 'action',
-        png:''
-    },    {
-        card_number: 'skip',
-        card_color: 'yellow',
-        card_action: 'action',
-        png:''
-    },   {
-        card_number: 'skip',
-        card_color: 'yellow',
-        card_action: 'action',
-        png:''
     },   
+    //  {
+    //     card_number: 'reverse',
+    //     card_color: 'yellow',
+    //     card_action: 'action',
+    //     png:''
+    // },    {
+    //     card_number: 'reverse',
+    //     card_color: 'yellow',
+    //     card_action: 'action',
+    //     png:''
+    // },    {
+    //     card_number: 'skip',
+    //     card_color: 'yellow',
+    //     card_action: 'action',
+    //     png:''
+    // },   {
+    //     card_number: 'skip',
+    //     card_color: 'yellow',
+    //     card_action: 'action',
+    //     png:''
+    // },   
     {
         card_number:'+4',
         card_color:'black',
@@ -622,6 +628,8 @@ const game = {
     ],
     playerTurn:[]
     ,
+    maxComp:0
+    ,
     // keeps track the cards that are in player hands
     cardsInHand:[],
     // keeps track what has been played from the player hand
@@ -662,15 +670,8 @@ const game = {
         for(let i = 0; i < 7;i++){
             this.dealToPlayer();
         }
-        for(let i = 0; i < computersList.computerPlayers.length;i++){
-            for(let t = 0; t< 7;t++){   
-                const deal = this.randomCard();
-                computersList.getComputerPlayer(i).playerHand.push(this.deck[deal])
-                this.deck.splice(deal,1)
-            }
-        }
-        console.log(this.deck.length)
-    },
+    
+      },
     dealToPlayer(){
         const deal = this.randomCard();
         player.playerHand.push(this.deck[deal])
@@ -737,10 +738,21 @@ const game = {
 
     },
     startGame(){
-        computersList.generateComputerPlayers();
-        computersList.generateComputerPlayers();
-        game.dealStarterHand();
+        const showGame = document.querySelector('#player')
+        const deck = document.querySelector('#deck')
+        const current = document.querySelector('#current_Card');
+
         
+
+        this.startingCards();
+        this.dealStarterHand();
+        player.displayCard();
+
+        showGame.classList.replace('noDisplay','display')
+        current.classList.replace('noDisplay', 'display')
+        deck.classList.replace('noDisplay','display')
+
+
 
     }
     ,
@@ -799,14 +811,14 @@ const player ={
     playCard(card){
         for(let i = 0;i< this.playerHand.length;i++){
             if(card.classList[1]== this.playerHand[i].card_color){
-                this.cardInterperter(index);
+                
                 game.cardInPlay.push(this.playerHand[i]);
                 this.playerHand.splice(i,1);
                  return true
             }
             else if (card.innerHTML == this.playerHand[i].card_number){
                 game.cardInPlay.push(this.playerHand[i]);
-                this.cardInterperter(index);
+    
                 this.playerHand.splice(i,1);
                 return true
             }
@@ -849,46 +861,25 @@ const player ={
     
 }
 
-/* 
-    class  computer will be able to make the needed computer 
-
-    what should this class hold:
-    1. the cards a array of objects
-    2. Uno a bool 
-    method: 
-    1. playerCard()
-    2.displayCard()
- */
-
-class computer{
-    constructor(playerId){
-        this.playerHand = [];
-        this.calledUno = false;
-        this.playerId = playerId;
-    }
+const comp1= {
+    computerHand:[],
     autoPlayCard(){
 
     }
-
-
 }
 
-// this object will hold the logic to make the needed to make the computder class needed 
-
-const computersList = {
-    computerPlayers:[],
-// make the needed computer player
-    generateComputerPlayers(){
-        const newComputer = new computer(this.computerPlayers.length);
-        this.computerPlayers.push(newComputer)
-        return newComputer;
-        },
-    getComputerPlayer(index){
-        return this.computerPlayers[index];
+const comp2= {
+    computer2Hand:[],
+    autoPlayCard(){
+        
     }
-
 }
-
+const comp3= {
+    computer3Hand:[],
+    autoPlayCard(){
+        
+    }
+}
 
 
 
@@ -901,10 +892,77 @@ const computerPicker = document.querySelector('.computer-player')
 
 
 
+
 start.addEventListener('click',()=>{
     start.classList.add('noDisplay')
     computerPicker.classList.replace('noDisplay', 'display')
 })
+titleStart.addEventListener('click', (e)=>{
+    if(e.target.classList.contains('1c')){
+        game.maxComp= 1;
+        titleStart.classList.replace('display','noDisplay')
+
+        for(let i = 0;i < game.maxComp;i++){
+            for(let t=0; t < 7 ;t++){
+                const deal = game.randomCard()
+                comp1.computerHand.push(game.deck[deal])
+                console.log(comp1.computerHand[t])
+                game.deck.splice(deal,1)
+            }
+            console.log('comp hand'+comp1.computerHand)
+        }
+        console.log(comp1.computerHand)
+        game.startGame()
+    }
+    else if(e.target.classList.contains('2c')){
+        game.maxComp =2;
+        titleStart.classList.replace('display','noDisplay')
+
+      
+            for(let t=0; t < 7 ;t++){
+                const deal1 = game.randomCard()
+                const deal2 = game.randomCard()
+     
+                comp1.computerHand.push(game.deck[deal1])
+                game.deck.splice(deal1,1)
+
+                comp2.computer2Hand.push(game.deck[deal2])
+                game.deck.splice(deal2,1)
+               
+            }
+            console.log('comp1 hand'+comp1.computerHand.length)
+            console.log('comp2 hand'+comp2.computer2Hand.length)
+            
+        
+        game.startGame()
+    }
+    else if(e.target.classList.contains('3c')){
+        game.maxComp =3;
+        titleStart.classList.replace('display','noDisplay')
+        for(let t=0; t < 7 ;t++){
+            const deal1 = game.randomCard()
+            const deal2 = game.randomCard()
+            const deal3 = game.randomCard()
+ 
+            comp1.computerHand.push(game.deck[deal1])
+            game.deck.splice(deal1,1)
+
+            comp2.computer2Hand.push(game.deck[deal2])
+            game.deck.splice(deal2,1)
+
+            comp3.computer3Hand.push(game.deck[deal3])
+            game.deck.splice(deal3,1)
+           
+        }
+        console.log('comp1 hand'+comp1.computerHand.length)
+        console.log('comp2 hand'+comp2.computer2Hand.length)
+        console.log('comp3 hand'+comp3.computer3Hand.length)
+        game.startGame()
+    }
+
+    console.log(e.target)
+})
+
 
 
 
@@ -986,4 +1044,3 @@ draw.addEventListener('click', (e)=>{
 })
 
 
-game.startingCards();

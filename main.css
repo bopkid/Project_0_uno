@@ -28,9 +28,7 @@ ul{
 }
 
 #player{
-    border:  10px red solid;
-  
-   
+
 }
 #deck{
     font-size: 10% vw;
@@ -73,6 +71,7 @@ ul{
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-bottom: 150px;
 }
 
 
