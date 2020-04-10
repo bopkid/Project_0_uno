@@ -52,18 +52,25 @@ ____
 
 ![gamestart](pics/start.png)
 
+___
+
 
 ![chooseComp](pics/chooseComp.png)
 
+___
 
 ![chooseComp](pics/1computergame.png)
+___
 
 ![chooseComp](pics/playerwins.png)
+___
 
 ![chooseComp](pics/playerlost.png)
+___
 
 ![chooseComp](pics/play_again.png)
 
+___
 
 ## WIP Features
 -show all 3 computer hands when player picks a amount of computer
