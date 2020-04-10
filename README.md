@@ -76,3 +76,6 @@ ____
 
 -better css 
 
+-The player +2 and +4 working logic
+
+-optimize the way the turn logic works
