@@ -29,9 +29,25 @@ VI.This will go on until the player or one of the computer has two card left the
 
 VII.The game will end when one of the players has no card left in their hand and they will be declared the winner
 
-VIII. Then the screen will clear and shows who has wong the game
+VIII. Then the screen will clear and shows who has wong the game(WIP)
 
-IX. After this it will clear and show a button saying to play again?
+IX. After this it will clear and show a button saying to play again?(WIP)
 
 ____
 
+### Wire Frames
+
+
+![gamestart](pics/start.png)
+
+
+![chooseComp](pics/chooseComp.png)
+
+
+![chooseComp](pics/1computergame.png)
+
+![chooseComp](pics/playerwins.png)
+
+![chooseComp](pics/playerlost.png)
+
+![chooseComp](pics/play_again.png)
